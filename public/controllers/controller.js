@@ -20,5 +20,30 @@ myApp.controller("AppCtrl", ["$scope", "$http", function($scope, $http) {
 	    refresh();
 	});
     };
+
+    $scope.remove = function(id) {
+	console.log(id);
+	$http.delete("/portfolio/" + id).success( function(res) {
+	    refresh();
+	});
+    };
+
+    $scope.edit = function(id) {
+	console.log(id);
+	$http.get("/portfolio/" + id).success( function(res) {
+	    $scope.entry = response; // put response in input boxes
+	});
+    };
+
+    $scope.update = function(id) {
+	console.log($scope.entry._id);
+	$http.put("/portfolio/" + $scope.entry._id, $scope.entry).success( function(res) {
+	    refresh();
+	});
+    };
+
+    $scope.deselect = function() {
+	$scope.entry = "";
+    };
     
 }]);
