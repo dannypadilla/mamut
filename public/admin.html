@@ -1,0 +1,56 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+  
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
+    <title>NAME</title>
+  </head>
+
+  <body>
+
+    <section id="main">
+      <div class="container" ng-controller="AppCtrl">
+
+	<div class="row">
+	  <div class="col-lg-12 text-center">
+	    <h2>TEST HERE</h2>
+	    <hr class="star-primary">
+	  </div>
+	</div>
+
+	<table class="table table-striped">
+	  <thead> <!-- table header -->
+	    <tr> <!-- row -->
+	      <th>Title</th>
+	      <th>Text</th>
+	      <th> ayy &nbsp;</th>
+	    </tr>
+	  </thead>
+	  <tbody> <!-- table body -->
+	    <tr> <!-- row entry -->
+	      <td><input class="form-control" ng-model="entry.title"></td>
+	      <td><input class="form-control" ng-model="entry.text"></td>
+	    </tr>
+	    <tr ng-repeat="entry in portfolio">
+	      <td>{{entry.title}}</td>
+	      <td>{{entry.text}}</td>
+	    </tr>
+	  </tbody>
+	</table>
+	
+      </div>
+    </section>
+
+    <footer class="text-center">FOOTER CENTERED</footer>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="controllers/controller.js"></script>
+    
+  </body>
+  
+</html>
